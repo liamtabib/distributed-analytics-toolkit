@@ -1,10 +1,6 @@
 ## cuda-programming
  Contains scripts and plots that were written as part of the course `Accelerator-based programming`. This includes GPU-parallelized code in CUDA programming language, and job scripts for SLURM schedule manager.
 
-## K-Means-init
-
-Contains a comparative monte-carlo study, using synthetic datasets, of the initialization methods for k-means algorithm.
-
 
 ## sports-analytics
 
