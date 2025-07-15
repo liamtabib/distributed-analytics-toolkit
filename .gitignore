@@ -1,0 +1,33 @@
+# Compiled CUDA binaries
+*.o
+*.out
+memory-bandwidth-benchmark
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Generated plots and outputs
+*.png
+*.jpg
+*.pdf
+
+# Virtual environments
+*env/
+venv/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

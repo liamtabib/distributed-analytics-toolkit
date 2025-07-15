@@ -65,7 +65,7 @@ def plot_traceplots(num_samples):
     ax[1].set_xlabel("Iteration")
     plt.tight_layout()
 
-    plt.savefig('traceplots.png',dpi=400)
+    plt.savefig('output/traceplots.png',dpi=400)
 
 
 def plot_histograms():
@@ -105,7 +105,7 @@ def plot_histograms():
 
 
     plt.tight_layout()
-    plt.savefig('histograms.png',dpi=400)
+    plt.savefig('output/histograms.png',dpi=400)
 
 def main():
     plot_traceplots(100000)

@@ -158,7 +158,7 @@ def main():
     ax[1].legend(loc='upper right')  # Added legend for S2
 
     plt.tight_layout()
-    plt.savefig('comparison.png',dpi=400)
+    plt.savefig('output/comparison.png',dpi=400)
 
 if __name__ == "__main__":
     main()

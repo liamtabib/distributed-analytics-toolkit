@@ -155,16 +155,16 @@ def run_season(df, shuffle: bool, n_draws):
 
     if shuffle:
         print(f'accuracy with shuffle: {correct/(correct+incorrect)}')
-        plt.savefig('season_shuffle.png',dpi=400)
+        plt.savefig('output/season_shuffle.png',dpi=400)
     else:
         print(f'accuracy: {correct/(correct+incorrect)}')
-        plt.savefig('season.png',dpi=400)
+        plt.savefig('output/season.png',dpi=400)
 
 
 def main():
 
 
-    df = pd.read_csv('SerieA.csv')
+    df = pd.read_csv('serie_a.csv')
     df = preprocess(df)
     shuffle = False
 

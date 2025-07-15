@@ -40,4 +40,4 @@ plt.grid(True)
 plt.legend() # Uncommented this line to show the legend
 
 plt.tight_layout()
-plt.savefig("MM.png",dpi=400)
+plt.savefig("output/MM.png",dpi=400)

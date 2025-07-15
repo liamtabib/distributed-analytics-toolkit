@@ -6,5 +6,15 @@
 #SBATCH --gres=gpu:1 --gpus-per-node=1 # use the GPU nodes
 #SBATCH -J stream_cuda # name of the job 
 #SBATCH -D ./ # stay in current working directory 
-#nvidia-smi
-./stream_triad_cuda
+
+# Build the program if not already built
+if [ ! -f "./memory-bandwidth-benchmark" ]; then
+    make
+fi
+
+# Create output directory
+mkdir -p output
+
+# Run the program and save output
+nvidia-smi
+./memory-bandwidth-benchmark > output/results.txt
