@@ -2,10 +2,6 @@
 
 Toolkit for Bayesian sports ranking and GPU performance benchmarking, using advanced probabilistic inference algorithms and high-performance CUDA implementations.
 
-## Overview
-
-This project provides two analytical modules: a Bayesian ranking system for sports team analysis and a GPU benchmarking suite for performance evaluation. The toolkit combines statistical inference methods with high-performance computing, making it suitable for researchers, data scientists, and engineers working with probabilistic models and GPU optimization.
-
 ## Features
 
 ### Bayesian Ranking Module
