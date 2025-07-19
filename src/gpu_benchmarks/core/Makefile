@@ -4,16 +4,16 @@
 NVCC = nvcc
 
 # Target executable
-TARGET = memory-bandwidth-benchmark
+TARGET = memory_benchmark
 
 # Source files
-SOURCES = memory-bandwidth-benchmark.cu
+SOURCES = memory_benchmark.cu
 
 # Compiler flags
 NVCC_FLAGS = -O3 -arch=sm_60 -lcudart
 
 # Output directory
-OUTPUT_DIR = output
+OUTPUT_DIR = ../../outputs/results
 
 # Default target
 all: $(TARGET)

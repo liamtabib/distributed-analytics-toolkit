@@ -65,7 +65,12 @@ def plot_traceplots(num_samples):
     ax[1].set_xlabel("Iteration")
     plt.tight_layout()
 
-    plt.savefig('output/traceplots.png',dpi=400)
+    import os
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.join(current_dir, '..', '..', '..')
+    output_path = os.path.join(project_root, 'outputs', 'plots', 'traceplots.png')
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    plt.savefig(output_path, dpi=400)
 
 
 def plot_histograms():
@@ -105,7 +110,12 @@ def plot_histograms():
 
 
     plt.tight_layout()
-    plt.savefig('output/histograms.png',dpi=400)
+    import os
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.join(current_dir, '..', '..', '..')
+    output_path = os.path.join(project_root, 'outputs', 'plots', 'histograms.png')
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    plt.savefig(output_path, dpi=400)
 
 def main():
     plot_traceplots(100000)

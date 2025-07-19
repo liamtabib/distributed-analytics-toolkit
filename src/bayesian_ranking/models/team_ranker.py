@@ -23,7 +23,7 @@ def init_priors(df: pd.DataFrame):
     priors = {}
     for team in all_teams:
         priors[team] = (0,1) #mean zero, variance one
-    # set convariance prior between two teams
+    # set covariance prior between two teams
     covariances = {}
     for team1 in all_teams:
         for team2 in all_teams:
@@ -79,7 +79,8 @@ def gibbs_sampler(outcome, mu_s1, sigma_s1, mu_s2, sigma_s2, covariance, n_draws
     return s1_samples, s2_samples
 
 
-def run_season(df, shuffle: bool, n_draws):
+def run_season(df, shuffle: bool, n_draws, project_root: str):
+    import os
     
     if shuffle:
         df = df.sample(frac=1)
@@ -155,26 +156,35 @@ def run_season(df, shuffle: bool, n_draws):
 
     if shuffle:
         print(f'accuracy with shuffle: {correct/(correct+incorrect)}')
-        plt.savefig('output/season_shuffle.png',dpi=400)
+        output_path = os.path.join(project_root, 'outputs', 'plots', 'season_shuffle.png')
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        plt.savefig(output_path, dpi=400)
     else:
         print(f'accuracy: {correct/(correct+incorrect)}')
-        plt.savefig('output/season.png',dpi=400)
+        output_path = os.path.join(project_root, 'outputs', 'plots', 'season.png')
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        plt.savefig(output_path, dpi=400)
 
 
 def main():
-
-
-    df = pd.read_csv('serie_a.csv')
+    import os
+    
+    # Get the path to the data file relative to the project root
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.join(current_dir, '..', '..', '..')
+    data_file = os.path.join(project_root, 'data', 'serie_a.csv')
+    
+    df = pd.read_csv(data_file)
     df = preprocess(df)
     shuffle = False
 
     n_draws = 1000 #for generating the plot, we used n= 10 000
     #run correct season
-    run_season(df, shuffle, n_draws)
+    run_season(df, shuffle, n_draws, project_root)
 
     #run shuffle season
     shuffle = True
-    run_season(df, shuffle, n_draws)    
+    run_season(df, shuffle, n_draws, project_root)    
 
 
 if __name__=='__main__':

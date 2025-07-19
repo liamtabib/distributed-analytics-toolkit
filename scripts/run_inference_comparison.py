@@ -158,7 +158,12 @@ def main():
     ax[1].legend(loc='upper right')  # Added legend for S2
 
     plt.tight_layout()
-    plt.savefig('output/comparison.png',dpi=400)
+    import os
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.join(current_dir, '..')
+    output_path = os.path.join(project_root, 'outputs', 'plots', 'comparison.png')
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    plt.savefig(output_path, dpi=400)
 
 if __name__ == "__main__":
     main()

@@ -87,5 +87,10 @@ def main():
     # Compute the marginal of s2
     ps2_m, ps2_s = multiplyGauss(mu6_m, mu6_s, mu10_m, mu10_s)
 
+def main():
+    """Example usage of message passing inference."""
+    print("Message passing inference module loaded successfully.")
+    # Add example usage here if needed
+
 if __name__=='__main__':
     main()
